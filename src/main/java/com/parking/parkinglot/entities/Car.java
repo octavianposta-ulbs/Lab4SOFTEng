@@ -3,21 +3,21 @@ package com.parking.parkinglot.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "car")
+@Table(name = "cars")
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
+    @Column(name = "ID", nullable = false)
     private Long id;
 
-    @Column(name = "parking_spot")
+    @Column(name = "PARKINGSPOT")
     private String parkingSpot;
 
-    @Column(name = "license_plate")
+    @Column(name = "LICENSEPLATE")
     private String licensePlate;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "owner_id", nullable = false)
+    @JoinColumn(name = "OWNER_ID", nullable = false)
     private User owner;
 
     public User getOwner() {
